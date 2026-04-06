@@ -1,10 +1,7 @@
+import { WorkOrdersPage } from "./ui/pages/WorkOrderPage";
+
 function App() {
-  return (
-    <main>
-      <h1>Work Order Desk</h1>
-      <p>Frontend Foundation is ready</p>
-    </main>
-  );
+  return <WorkOrdersPage />;
 }
 
 export default App;
