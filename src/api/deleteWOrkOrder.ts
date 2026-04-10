@@ -1,7 +1,7 @@
-import { API_BASED_URL } from "../infra/config/api";
+import { API_BASE_URL } from "../infra/config/api";
 
 export async function deleteWorkOrder(id: string): Promise<void> {
-  const response = await fetch(`${API_BASED_URL}/work-orders/${id}`, {
+  const response = await fetch(`${API_BASE_URL}/work-orders/${id}`, {
     method: "DELETE",
   });
 

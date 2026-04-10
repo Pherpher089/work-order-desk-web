@@ -1,6 +1,6 @@
 import { useWorkOrders } from "../../features/work-orders/hooks/useWorkOrders";
 import { useDeleteWorkOrder } from "../../features/work-orders/hooks/useDeleteWorkOrder";
-
+import { CreateWorkOrderForm } from "../../features/work-orders/components/CreateWorkOrderForm";
 export function WorkOrdersPage() {
   const { data, isLoading, isError, error } = useWorkOrders();
   const deleteMutation = useDeleteWorkOrder();
@@ -19,6 +19,7 @@ export function WorkOrdersPage() {
   return (
     <main>
       <h1>Work Order Desk</h1>
+      <CreateWorkOrderForm />
       <ul>
         {data.map((workOrder) => (
           <li>
