@@ -1,8 +1,9 @@
 import { useWorkOrders } from "../../features/work-orders/hooks/useWorkOrders";
+import { useDeleteWorkOrder } from "../../features/work-orders/hooks/useDeleteWorkOrder";
 
 export function WorkOrdersPage() {
   const { data, isLoading, isError, error } = useWorkOrders();
-
+  const deleteMutation = useDeleteWorkOrder();
   if (isLoading) {
     return <p>Loading workOrders...</p>;
   }
@@ -26,6 +27,12 @@ export function WorkOrdersPage() {
             <p>Status: {workOrder.status}</p>
             <p>Priority: {workOrder.priority}</p>
             {workOrder.description ? <p>{workOrder.description}</p> : null}
+            <button
+              onClick={() => deleteMutation.mutate(workOrder.id)}
+              disabled={deleteMutation.isPending}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>

@@ -1,18 +1,23 @@
 ## [Unreleased]
 
+### Added 4/10/26
+
+- Delete work order functionality in UI
+- React Query mutation for deleting work orders
+
+### Changed 4/10/26
+
+- Improved layout and styling for work order list
+
 ### Changed 4/8/26
 
 - README.md
-
-## [Unreleased]
 
 ### Added 4/6/26
 
 - Work orders list page
 - Work orders query hook using React Query
 - HTTP client and API integration for listing work orders
-
-## [Unreleased]
 
 ### Added 4/2/26
 
