@@ -12,6 +12,12 @@ Built with:
 - TypeScript
 - Vite
 - React Query
+---
+
+## 🖼️ Screenshots
+
+![Screenshot 2](./assets/Form.png)
+![Screenshot 1](./assets/List.png)
 
 ---
 

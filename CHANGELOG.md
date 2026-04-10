@@ -2,6 +2,11 @@
 
 ### Added 4/10/26
 
+- Styling for create form
+- Screenshot folder for README.md
+
+### Added 4/10/26
+
 - Create work order form UI
 - API integration for creating work orders
 - React Query mutation for create workflow
