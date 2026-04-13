@@ -1,5 +1,3 @@
----
-
 # 🎨 FRONTEND README (`work-order-desk-web`)
 
 ```
