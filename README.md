@@ -2,7 +2,7 @@
 
 # 🎨 FRONTEND README (`work-order-desk-web`)
 
-```md
+```
 # Work Order Desk Web
 
 Frontend application for the Work Order Desk system.
