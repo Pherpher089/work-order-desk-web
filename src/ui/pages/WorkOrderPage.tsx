@@ -11,6 +11,14 @@ import type {
 } from "../../domain/work-orders/types";
 import logo from "../../../assets/logo.png";
 
+function priorityClass(priority: string) {
+  return `badge badge--priority-${priority.toLowerCase()}`;
+}
+
+function statusClass(status: string) {
+  return `badge badge--status-${status.toLowerCase()}`;
+}
+
 export function WorkOrdersPage() {
   const { data, isLoading, isError, error } = useWorkOrders();
   const deleteMutation = useDeleteWorkOrder();
@@ -26,11 +34,21 @@ export function WorkOrdersPage() {
   } = useWorkOrderDetails(editingId);
 
   if (isLoading) {
-    return <p>Loading workOrders...</p>;
+    return (
+      <main>
+        <p className="info-state">Loading workOrders...</p>
+      </main>
+    );
   }
 
   if (isError) {
-    return <p>Faild to load work orders: {(error as Error).message}</p>;
+    return (
+      <main>
+        <div className="info-state">
+          Faild to load work orders: {(error as Error).message}
+        </div>
+      </main>
+    );
   }
 
   const hanldeDelete = (id: string) => {
@@ -80,16 +98,22 @@ export function WorkOrdersPage() {
     <main>
       <header className="header">
         <img src={logo} alt="Work Order Desk" className="logo" />
-        <h1>Work Order Desk</h1>
+        <div className="header-text">
+          <h1>Work Order Desk</h1>
+          <p className="subtitle">
+            Lightweight internal tool for tracking work order status and
+            priority.
+          </p>
+        </div>
       </header>
 
       {editingId ? (
         isLoadingDetials ? (
-          <p>Loading work order details...</p>
+          <div className="info-state">Loading work order details...</div>
         ) : isDetialsError ? (
-          <p>
+          <div className="info-state">
             Faild to load work order details: {(detailsError as Error).message}
-          </p>
+          </div>
         ) : editingWorkOrder ? (
           <WorkOrderForm
             mode="edit"
@@ -114,7 +138,12 @@ export function WorkOrdersPage() {
       )}
 
       {!data || data.length === 0 ? (
-        <p>No work orders yet.</p>
+        <div className="empty-state">
+          <strong>No work orders yet.</strong>
+          <p style={{ marginBottom: 0 }}>
+            Create your first work order to get started.
+          </p>
+        </div>
       ) : (
         <ul>
           {data.map((workOrder) => (
@@ -122,11 +151,22 @@ export function WorkOrdersPage() {
               key={workOrder.id}
               className={editingId === workOrder.id ? "selected-card" : ""}
             >
-              <h2>{workOrder.title}</h2>
-              <p>Status: {workOrder.status}</p>
-              <p>Priority: {workOrder.priority}</p>
+              <div className="card-header">
+                <h2 className="card-title">{workOrder.title}</h2>
+              </div>
 
-              {workOrder.description && <p>{workOrder.description}</p>}
+              <div>
+                <span className={priorityClass(workOrder.priority)}>
+                  {workOrder.priority} Priority
+                </span>
+                <span className={statusClass(workOrder.status)}>
+                  {workOrder.status}
+                </span>
+              </div>
+
+              {workOrder.description && (
+                <p className="card-description">{workOrder.description}</p>
+              )}
               <div className="form-actions">
                 <button
                   type="button"
@@ -135,7 +175,9 @@ export function WorkOrdersPage() {
                 >
                   Edit
                 </button>
+
                 <button
+                  className="danger-button"
                   type="button"
                   onClick={() => hanldeDelete(workOrder.id)}
                   disabled={deleteMutation.isPending}

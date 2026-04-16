@@ -1,15 +1,30 @@
 ## [Unreleased]
 
+### Added 4/16/26
+
+- Status and priority badge styling for work orders
+- Empty and loading state UI components
+- README screenshots showcasing dashboard, edit mode, and error handling
+
+### Changed 4/16/26
+
+- Polished dashboard layout, work order cards, and action buttons
+- Improved visual hierarchy and branding for portfolio presentation
+- Enhanced README with feature overview, architecture explanation, and development details
+
 ### Added 4/15/26
+
 - Edit work order functionality with reusable form component
 - WorkOrderForm supporting both create and edit modes
 - Fetch work order by id for edit mode
 - Update work order API integration
 
 ### Fixed 4/15/26
+
 - Corrected HTTP method for update requests (PUT instead of GET) to resolve fetch error
 
 ### Changed 4/15/26
+
 - Refactored create form to use shared WorkOrderForm component
 - Improved UI consistency across create and edit flows
 - Increased logo size for stronger branding presence
