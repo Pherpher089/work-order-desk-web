@@ -1,5 +1,19 @@
 ## [Unreleased]
 
+### Added 4/15/26
+- Edit work order functionality with reusable form component
+- WorkOrderForm supporting both create and edit modes
+- Fetch work order by id for edit mode
+- Update work order API integration
+
+### Fixed 4/15/26
+- Corrected HTTP method for update requests (PUT instead of GET) to resolve fetch error
+
+### Changed 4/15/26
+- Refactored create form to use shared WorkOrderForm component
+- Improved UI consistency across create and edit flows
+- Increased logo size for stronger branding presence
+
 ### Added 4/10/26
 
 - Styling for create form
