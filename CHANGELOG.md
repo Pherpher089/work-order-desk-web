@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed 4/22/26
+
+- Project config to read from .env file
+
 ### Added 4/16/26
 
 - Status and priority badge styling for work orders
