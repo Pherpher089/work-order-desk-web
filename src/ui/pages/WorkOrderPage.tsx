@@ -63,10 +63,6 @@ export function WorkOrdersPage() {
     setEditingId(null);
   };
 
-  if (!data || data.length === 0) {
-    return <p>No work orders yet</p>;
-  }
-
   const handleSubmitEdit = (values: {
     title: string;
     description: string;
