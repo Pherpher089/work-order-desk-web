@@ -8,10 +8,11 @@ A responsive, user-friendly interface for creating, managing, and tracking work 
 
 ## 🌐 Live Demo
 
-> Coming soon
-
-Frontend: (add link when deployed)
-Backend API: (add link when deployed)
+| | Link |
+|---|---|
+| **Frontend** | [work-order-desk-web.vercel.app](https://work-order-desk-web.vercel.app/) |
+| **Backend API** | [work-order-desk-api.onrender.com](https://work-order-desk-api.onrender.com/) |
+| **API Docs (Swagger)** | [work-order-desk-api.onrender.com/swagger/index.html](https://work-order-desk-api.onrender.com/swagger/index.html) |
 
 ---
 
